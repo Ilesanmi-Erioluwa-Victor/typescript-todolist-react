@@ -79,5 +79,13 @@ const tasksSlice = createSlice({
       const indexTask = state.tasks.indexOf(newTaskEdited);
       state.tasks[indexTask] = action.payload;
     },
+
+    toggleTaskCompleted(state, action: PayloadAction<string>) {
+      const taskId = action.payload;
+
+      const currTask = state.tasks.find((task) => task.id === taskId)!;
+
+      currTask.completed = !currTask.completed;
+    },
   },
 });
