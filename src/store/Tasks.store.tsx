@@ -92,5 +92,12 @@ const tasksSlice = createSlice({
       state.tasks = [];
       state.directories = ["Main"];
     },
+
+    createDirectory(state, action: PayloadAction<string>) {
+      const newDirectory: string = action.payload;
+      const directoryAlreadyExists = state.directories.includes(newDirectory);
+      if (directoryAlreadyExists) return;
+      state.directories = [newDirectory, ...state.directories];
+    },
   },
 });
