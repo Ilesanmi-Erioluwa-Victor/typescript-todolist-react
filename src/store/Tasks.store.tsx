@@ -62,5 +62,12 @@ const tasksSlice = createSlice({
       );
       state.tasks = newTaskList;
     },
+
+    markAsImportant(state, action: PayloadAction<string>) {
+      const newTaskFavorited = state.tasks.find(
+        (task) => task.id === action.payload
+      );
+      newTaskFavorited!.important = !newTaskFavorited!.important;
+    },
   },
 });
