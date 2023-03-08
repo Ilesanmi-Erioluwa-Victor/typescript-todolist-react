@@ -48,10 +48,10 @@ const initialState: {
   directories: getSavedDirectories(),
 };
 
-const taskSlice = createSlice({
-    name: "tasks",
-    initialState,
-    reducers: {
-        
-    }
-})
+const tasksSlice = createSlice({
+  name: "tasks",
+  initialState,
+  reducers: {
+    addNewTask: (state, action: PayloadAction<Task>) => {},
+  },
+});
