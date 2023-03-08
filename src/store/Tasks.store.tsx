@@ -106,5 +106,64 @@ const tasksSlice = createSlice({
       state.directories = state.directories.filter((dir) => dir !== dirName);
       state.tasks = state.tasks.filter((task) => task.dir !== dirName);
     },
+
+    editDirectoryName(
+      state,
+      action: PayloadAction<{ newDirName: string; previousDirName: string }>
+    ) {
+      const newDirName: string = action.payload.newDirName;
+      const previousDirName: string = action.payload.previousDirName;
+      const directoryAlreadyExists = state.directories.includes(newDirName);
+      if (directoryAlreadyExists) return;
+
+      const dirIndex = state.directories.indexOf(previousDirName);
+
+      state.directories[dirIndex] = newDirName;
+      state.tasks.forEach((task) => {
+        if (task.dir === previousDirName) {
+          task.dir = newDirName;
+        }
+      });
+    },
   },
 });
+
+export const tasksActions = tasksSlice.actions;
+export default tasksSlice.reducer;
+
+export const tasksMiddleware =
+  (store: MiddlewareAPI) => (next: Dispatch) => (action: Action) => {
+    const nextAction = next(action);
+    const actionChangeOnlyDirectories =
+      tasksActions.createDirectory.match(action);
+
+    const isADirectoryAction: boolean = action.type
+      .toLowerCase()
+      .includes("directory");
+
+    if (action.type.startsWith("tasks/") && !actionChangeOnlyDirectories) {
+      const tasksList = store.getState().tasks.tasks;
+      localStorage.setItem("tasks", JSON.stringify(tasksList));
+    }
+    if (action.type.startsWith("tasks/") && isADirectoryAction) {
+      const dirList = store.getState().tasks.directories;
+      localStorage.setItem("directories", JSON.stringify(dirList));
+    }
+
+    if (tasksActions.deleteAllData.match(action)) {
+      localStorage.removeItem("tasks");
+      localStorage.removeItem("directories");
+      localStorage.removeItem("darkmode");
+    }
+
+    if (tasksActions.removeTask.match(action)) {
+      console.log(JSON.parse(localStorage.getItem("tasks")!));
+      if (localStorage.getItem("tasks")) {
+        const localStorageTasks = JSON.parse(localStorage.getItem("tasks")!);
+        if (localStorageTasks.length === 0) {
+          localStorage.removeItem("tasks");
+        }
+      }
+    }
+    return nextAction;
+  };
