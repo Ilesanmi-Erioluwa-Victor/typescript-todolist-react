@@ -52,15 +52,15 @@ const tasksSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
-    addNewTask: (state, action: PayloadAction<Task>) => {
+    addNewTask(state, action: PayloadAction<Task>) {
       state.tasks = [action.payload, ...state.tasks];
     },
 
-    removeTask: (state, action) => {
-      const newTaskList = state.tasks.filter(
+    removeTask(state, action) {
+      const newTasksList = state.tasks.filter(
         (task) => task.id !== action.payload
       );
-      state.tasks = newTaskList;
+      state.tasks = newTasksList;
     },
 
     markAsImportant(state, action: PayloadAction<string>) {
@@ -86,6 +86,11 @@ const tasksSlice = createSlice({
       const currTask = state.tasks.find((task) => task.id === taskId)!;
 
       currTask.completed = !currTask.completed;
+    },
+
+    deleteAllData(state) {
+      state.tasks = [];
+      state.directories = ["Main"];
     },
   },
 });
