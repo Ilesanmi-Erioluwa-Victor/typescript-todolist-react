@@ -6,4 +6,4 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-
+const getSavedDirectories = (): string[] => {};
