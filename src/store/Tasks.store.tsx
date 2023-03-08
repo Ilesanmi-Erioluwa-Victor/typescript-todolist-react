@@ -47,3 +47,11 @@ const initialState: {
     : defaultTasks,
   directories: getSavedDirectories(),
 };
+
+const taskSlice = createSlice({
+    name: "tasks",
+    initialState,
+    reducers: {
+        
+    }
+})
