@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAppDispatch } from "store/hook";
 import { tasksActions } from "store/Tasks.store";
 import ModalConfirm from "components/Utils/ModalConfirm";
+import { TbTrashFilled } from "react-icons/tb"
 import { ReactComponent as Trash } from "../../../assets/trash.svg";
 
 const BtnDeleteTask: React.FC<{ taskId: string }> = ({ taskId }) => {
@@ -25,7 +26,7 @@ const BtnDeleteTask: React.FC<{ taskId: string }> = ({ taskId }) => {
         title="delete task"
         className="ml-2 transition hover:text-slate-700 dark:hover:text-slate-200"
       >
-        <Trash className="w-5 h-5 sm:w-6 sm:h-6" />
+        <TbTrashFilled className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
     </>
   );
