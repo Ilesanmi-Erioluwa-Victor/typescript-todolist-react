@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useAppDispatch } from "../../store/hooks";
-import { tasksActions } from "../../store/Tasks.store";
-import ModalConfirm from "../Utilities/ModalConfirm";
+import { useAppDispatch } from "store/hook";
+import { tasksActions } from "store/Tasks.store";
+import ModalConfirm from "components/Utils/ModalConfirm";
 
 const DeleteTasks: React.FC = () => {
   const dispatch = useAppDispatch();
