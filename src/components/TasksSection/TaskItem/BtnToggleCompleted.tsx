@@ -2,7 +2,6 @@ import React from "react";
 import { useAppDispatch } from "store/hook";
 import { tasksActions } from "store/Tasks.store";
 import { AiOutlineClose, AiOutlineCheck } from "react-icons/ai";
-import { ReactComponent as Check } from "../../../assets/check.svg";
 
 const BtnToggleCompleted: React.FC<{
   taskCompleted: boolean;
