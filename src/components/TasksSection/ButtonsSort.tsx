@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as IconView1 } from "../../assets/view-1.svg";
-import { ReactComponent as IconView2 } from "../../assets/view-2.svg";
+import { IoGrid } from "react-icons/io5";
+import { RiMenuFoldFill } from "react-icons/ri";
 
 const sortValues = [
   { value: "order-added", title: "Order added" },
@@ -22,13 +22,13 @@ const ButtonsSort: React.FC<{
         onClick={() => setIsListInView1(true)}
         title="view in list"
       >
-        <IconView1 className={isListInView1 ? "text-violet-600" : ""} />
+        <RiMenuFoldFill className={isListInView1 ? "text-violet-600" : ""} />
       </button>
       <button
         onClick={() => setIsListInView1(false)}
         title="view in grid"
       >
-        <IconView2 className={!isListInView1 ? "text-violet-600" : ""} />
+        <IoGrid className={!isListInView1 ? "text-violet-600" : ""} />
       </button>
       <select
         className="ml-auto inputStyles"
