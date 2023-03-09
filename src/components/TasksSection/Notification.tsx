@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import useVisibility from "components/hooks/useVisibility";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { ReactComponent as IconBell } from "../../assets/bell.svg";
 import useTodayTasks from "components/hooks/useTodayTasks";
 import useCompletedTasks from "components//hooks/useCompletedTasks";
 
