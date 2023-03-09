@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Task } from "../../interfaces";
-import { useAppSelector } from "../../store/hooks";
+import { Task } from "interface";
+import { useAppSelector } from "store/hook";
 import useDescriptionTitle from "../hooks/useDescriptionTitle";
-import LayoutRoutes from "../Utilities/LayoutRoutes";
+import LayoutRoutes from "components/Utils/LayoutRoutes";
 
 const TaskOnly: React.FC = () => {
   const params = useParams();
