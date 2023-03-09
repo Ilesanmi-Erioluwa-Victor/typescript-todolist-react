@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "store/hook";
 import { tasksActions } from "store/Tasks.store";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineCheck } from "react-icons/ai";
 import { ReactComponent as Check } from "../../../assets/check.svg";
 
 const BtnToggleCompleted: React.FC<{
@@ -30,9 +30,9 @@ const BtnToggleCompleted: React.FC<{
       </span>
       <span className=" sm:hidden w-6 h-6 grid place-items-center">
         {taskCompleted ? (
-          <Check className="w-3 h-3" />
+          <AiOutlineCheck className="w-3 h-3" />
         ) : (
-          <SvgX className="w-3 h-3" />
+          <AiOutlineClose className="w-3 h-3" />
         )}
       </span>
     </button>
