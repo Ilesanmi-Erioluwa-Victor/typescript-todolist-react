@@ -1,5 +1,5 @@
 import React from "react";
-import { Task } from "../../../interfaces";
+import { Task } from "interface";
 import BtnEditTask from "./BtnEditTask";
 import BtnMarkAsImportant from "./BtnMarkAsImportant";
 import BtnDeleteTask from "./BtnDeleteTask";
