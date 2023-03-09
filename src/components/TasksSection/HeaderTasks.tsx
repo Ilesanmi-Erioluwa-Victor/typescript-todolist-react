@@ -1,7 +1,7 @@
 import React from "react";
 import BtnAddTask from "components/Utils/BtnAddTask";
 import { CiMenuFries } from "react-icons/ci";
-import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
+import { FaUserSecret } from "react-icons/fa"
 import avatar1 from "../../assets/avatar-1.jpg";
 import SearchField from "./SearchField";
 import { useAppDispatch } from "../../store/hooks";
@@ -71,7 +71,7 @@ const HeaderTasks: React.FC = () => {
           className="block xl:hidden"
         >
           <img
-            src={avatar1}
+            src={<FaUserSecret />}
             alt="cat"
             className="w-10 h-10 rounded-full ml-4"
           />
