@@ -1,11 +1,11 @@
 import React from "react";
 import AccountData from "./components/AccountSection/AccountData";
-import Footer from "components/Footer";
-import Menu from "components/Menu/Menu";
-import TasksSection from "components/TasksSection/TasksSection";
-import ModalCreateTask from "components/Utils/ModalTask";
-import { Task } from "interface";
-import { useAppDispatch, useAppSelector } from "store/hook";
+import Footer from "./components/Footer";
+import Menu from "./components/Menu/Menu";
+import TasksSection from "./components/TasksSection/TasksSection";
+import ModalCreateTask from "./components/Utils/ModalTask";
+import { Task } from "./interface";
+import { useAppDispatch, useAppSelector } from "./store/hook";
 import { modalActions } from "./store/Modal.store";
 import { tasksActions } from "./store/Tasks.store";
 

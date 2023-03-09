@@ -6,7 +6,7 @@ const initialState = {
 
 const modalSlice = createSlice({
   name: "modal",
-  initialState,
+  initialState: initialState,
   reducers: {
     openModalCreateTask(state) {
       state.modalCreateTaskOpen = true;

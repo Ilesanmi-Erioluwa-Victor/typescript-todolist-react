@@ -5,17 +5,14 @@ import {
   MiddlewareAPI,
   PayloadAction,
 } from "@reduxjs/toolkit";
-
 import { Task } from "interface";
 import { defaultTasks } from "mock/mock";
 
 const getSavedDirectories = (): string[] => {
   let dirList: string[] = [];
-
   if (localStorage.getItem("directories")) {
     dirList = JSON.parse(localStorage.getItem("directories")!);
     const mainDirExists = dirList.some((dir: string) => dir === "Main");
-
     if (!mainDirExists) {
       dirList.push("Main");
     }
@@ -50,26 +47,23 @@ const initialState: {
 
 const tasksSlice = createSlice({
   name: "tasks",
-  initialState,
+  initialState: initialState,
   reducers: {
     addNewTask(state, action: PayloadAction<Task>) {
       state.tasks = [action.payload, ...state.tasks];
     },
-
     removeTask(state, action) {
       const newTasksList = state.tasks.filter(
         (task) => task.id !== action.payload
       );
       state.tasks = newTasksList;
     },
-
     markAsImportant(state, action: PayloadAction<string>) {
       const newTaskFavorited = state.tasks.find(
         (task) => task.id === action.payload
       );
       newTaskFavorited!.important = !newTaskFavorited!.important;
     },
-
     editTask(state, action: PayloadAction<Task>) {
       const taskId = action.payload.id;
 
@@ -79,7 +73,6 @@ const tasksSlice = createSlice({
       const indexTask = state.tasks.indexOf(newTaskEdited);
       state.tasks[indexTask] = action.payload;
     },
-
     toggleTaskCompleted(state, action: PayloadAction<string>) {
       const taskId = action.payload;
 
@@ -87,26 +80,22 @@ const tasksSlice = createSlice({
 
       currTask.completed = !currTask.completed;
     },
-
     deleteAllData(state) {
       state.tasks = [];
       state.directories = ["Main"];
     },
-
     createDirectory(state, action: PayloadAction<string>) {
       const newDirectory: string = action.payload;
       const directoryAlreadyExists = state.directories.includes(newDirectory);
       if (directoryAlreadyExists) return;
       state.directories = [newDirectory, ...state.directories];
     },
-
     deleteDirectory(state, action: PayloadAction<string>) {
       const dirName = action.payload;
 
       state.directories = state.directories.filter((dir) => dir !== dirName);
       state.tasks = state.tasks.filter((task) => task.dir !== dirName);
     },
-
     editDirectoryName(
       state,
       action: PayloadAction<{ newDirName: string; previousDirName: string }>

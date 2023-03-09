@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { AiOutlineClose } from "react-icons/ai"
-
+import { AiOutlineClose } from "react-icons/ai";
+// import { ReactComponent as SvgX } from "../../assets/x.svg";
 
 const ModalContent: React.FC<{
   children: React.ReactNode;
