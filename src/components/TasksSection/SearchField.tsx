@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createSearchParams, Link, useNavigate } from "react-router-dom";
-import { ReactComponent as Search } from "../../assets/search.svg";
+import { FiSearch } from "react-icons/fi"
 import { Task } from "interface";
 import useDate from "components/hooks/useDate";
 import useSearchQuery from "components/hooks/useSearchQuery";
@@ -77,7 +77,7 @@ const SearchField: React.FC = () => {
           }}
           className="inputStyles w-full"
         />
-        <Search className="absolute w-4 sm:w-5 right-4 top-3.5 text-slate-400" />
+        <FiSearch className="absolute w-4 sm:w-5 right-4 top-3.5 text-slate-400" />
         {listResultsVisible && (
           <div className="absolute bg-slate-100 rounded-md w-full top-14 p-3 dark:bg-slate-800 z-10">
             {tasks.length ? (
