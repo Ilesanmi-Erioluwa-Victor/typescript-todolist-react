@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
-import useScreenMedia from "components/hooks/useScreenMedia";
-
+import useScreenMedia from "../hooks/useScreenMedia";
 
 const LayoutMenus: React.FC<{
   menuOpen: boolean;
