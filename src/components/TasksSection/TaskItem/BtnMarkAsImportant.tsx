@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "store/hook";
 import { tasksActions } from "store/Tasks.store";
-import { ReactComponent as StarLine } from "../../../assets/star-line.svg";
+import { BsFillStarFill } from "react-icons/bs"
 
 const BtnMarkAsImportant: React.FC<{
   taskId: string;
@@ -19,7 +19,7 @@ const BtnMarkAsImportant: React.FC<{
       onClick={markAsImportantHandler}
       className="transition hover:text-slate-700 dark:hover:text-slate-200 ml-auto"
     >
-      <StarLine
+      <BsFillStarFill
         className={`w-5 h-5 sm:w-6 sm:h-6 ${
           taskImportant ? "fill-rose-500 stroke-rose-500 " : "fill-none"
         }`}
