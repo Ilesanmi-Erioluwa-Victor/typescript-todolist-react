@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { tasksActions } from "../../../store/Tasks.store";
-import ModalDirectory from "../../Utilities/ModalDirectory";
+import { useAppDispatch, useAppSelector } from "store/hook";
+import { tasksActions } from "store/Tasks.store";
+import ModalDirectory from "components/Utils/ModalDirectory";
 import ItemDirectory from "./ItemDirectory";
 
 const ContentDirectories: React.FC<{ classActive: string }> = ({
