@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ReactComponent as SvgX } from "../../assets/x.svg";
+import { AiOutlineClose } from "react-icons/ai"
+
 
 const ModalContent: React.FC<{
   children: React.ReactNode;
@@ -24,7 +25,7 @@ const ModalContent: React.FC<{
           className="absolute right-3 sm:right-4"
           onClick={onClose}
         >
-          <SvgX />
+          <AiOutlineClose />
         </button>
         <h2 className="font-medium mb-5 text-lg md:text-2xl">{title}</h2>
         {children}
