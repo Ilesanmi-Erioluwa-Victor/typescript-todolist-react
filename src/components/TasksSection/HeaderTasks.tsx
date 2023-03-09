@@ -1,5 +1,6 @@
 import React from "react";
 import BtnAddTask from "components/Utils/BtnAddTask";
+import { CiMenuFries } from "react-icons/ci";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import avatar1 from "../../assets/avatar-1.jpg";
 import SearchField from "./SearchField";
@@ -52,7 +53,7 @@ const HeaderTasks: React.FC = () => {
         onClick={openMenuHeaderHandler}
         title="open menu"
       >
-        <MenuIcon />
+        <CiMenuFries />
       </button>
       <SearchField />
       <div className="text-center">
