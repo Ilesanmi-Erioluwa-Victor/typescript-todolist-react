@@ -1,11 +1,10 @@
 import React from "react";
 import BtnAddTask from "components/Utils/BtnAddTask";
 import { CiMenuFries } from "react-icons/ci";
-import { FaUserSecret } from "react-icons/fa"
-import avatar1 from "../../assets/avatar-1.jpg";
+import avatar1 from "assets/avatar-1.jpg";
 import SearchField from "./SearchField";
-import { useAppDispatch } from "../../store/hooks";
-import { menusActions } from "../../store/Menu.store";
+import { useAppDispatch } from "store/hook";
+import { menusActions } from "store/Menu.store";
 import Notification from "./Notification";
 
 const HeaderTasks: React.FC = () => {
@@ -71,7 +70,7 @@ const HeaderTasks: React.FC = () => {
           className="block xl:hidden"
         >
           <img
-            src={<FaUserSecret />}
+            src={avatar1}
             alt="cat"
             className="w-10 h-10 rounded-full ml-4"
           />
