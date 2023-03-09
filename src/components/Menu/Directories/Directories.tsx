@@ -18,7 +18,7 @@ const Directories: React.FC<{ classActive: string }> = ({ classActive }) => {
         }`}
         onClick={toggleDirectoriesOpen}
       >
-        <Arrow
+        <AiOutlineArrowUp
           className={`w-3 h-3 mr-2 rotate-90 transition ${
             isDirectoriesOpen ? "rotate-180" : ""
           }`}
