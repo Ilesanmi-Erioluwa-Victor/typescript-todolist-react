@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useAppDispatch } from "../../../store/hooks";
-import { tasksActions } from "../../../store/Tasks.store";
+import { useAppDispatch } from "store/hook;
+import { tasksActions } from "store/Tasks.store";
 import { ReactComponent as Trash } from "../../../assets/trash.svg";
 import { ReactComponent as Edit } from "../../../assets/edit.svg";
-import ModalConfirm from "../../Utilities/ModalConfirm";
-import ModalDirectory from "../../Utilities/ModalDirectory";
+import ModalConfirm from "components/Utils/ModalConfirm";
+import ModalDirectory from "components/Utils/ModalDirectory";
 
 const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
   dir,
