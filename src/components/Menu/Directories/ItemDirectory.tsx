@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useAppDispatch } from "store/hook;
+import { useAppDispatch } from "store/hook";
 import { tasksActions } from "store/Tasks.store";
-import { ReactComponent as Trash } from "../../../assets/trash.svg";
-import { ReactComponent as Edit } from "../../../assets/edit.svg";
+import { TbTrashFilled } from "react-icons/tb";
+import { SlOptionsVertical } from "react-icons/sl";
 import ModalConfirm from "components/Utils/ModalConfirm";
 import ModalDirectory from "components/Utils/ModalDirectory";
 
@@ -73,7 +73,7 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
               title="edit directory name"
               onClick={() => setModalDirIsShown(true)}
             >
-              <Edit className="w-5 h-5 mr-2" />
+              <SlOptionsVertical className="w-5 h-5 mr-2" />
             </button>
             <button
               title="delete directory"
