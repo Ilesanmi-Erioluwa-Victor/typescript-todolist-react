@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useAppDispatch } from "store/hook";
 import { tasksActions } from "store/Tasks.store";
 import ModalConfirm from "components/Utils/ModalConfirm";
-import { TbTrashFilled } from "react-icons/tb"
-import { ReactComponent as Trash } from "../../../assets/trash.svg";
+import { TbTrashFilled } from "react-icons/tb";
 
 const BtnDeleteTask: React.FC<{ taskId: string }> = ({ taskId }) => {
   const [showModal, setIsModalShown] = useState<boolean>(false);
