@@ -1,7 +1,7 @@
 import React from "react";
-import { Task } from "../../../interfaces";
-import { ReactComponent as Calendar } from "../../../assets/date.svg";
-import useDate from "../../hooks/useDate";
+import { Task } from "interface";
+import { FcCalendar } from "react-icons/fc"
+import useDate from "components/hooks/useDate";
 
 const InfosTask: React.FC<{ task: Task; isListInView1: boolean }> = ({
   task,
@@ -29,7 +29,7 @@ const InfosTask: React.FC<{ task: Task; isListInView1: boolean }> = ({
         {task.description}
       </p>
       <time className="mt-auto flex w-full">
-        <Calendar className="mr-2 w-4 sm:w-5" /> {dateFormated}
+        <FcCalendar className="mr-2 w-4 sm:w-5" /> {dateFormated}
       </time>
     </div>
   );
