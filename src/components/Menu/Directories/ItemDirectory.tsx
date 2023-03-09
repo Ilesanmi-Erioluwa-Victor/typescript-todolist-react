@@ -79,7 +79,7 @@ const ItemDirectory: React.FC<{ dir: string; classActive: string }> = ({
               title="delete directory"
               onClick={() => setModalIsShown(true)}
             >
-              <Trash className="w-5 h-5" />
+              <TbTrashFilled className="w-5 h-5" />
             </button>
           </div>
         )}
