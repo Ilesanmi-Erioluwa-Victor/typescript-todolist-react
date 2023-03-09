@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AiOutlineArrowUp } from "react-icons/ai"
 import { ReactComponent as Arrow } from "../../../assets/arrow.svg";
 import ContentDirectories from "./ContentDirectories";
 
